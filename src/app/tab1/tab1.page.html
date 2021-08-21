@@ -1,17 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-content>
+        <ion-img style="width: 50px; height: 50px;" src="assets/icon/icon.png"></ion-img>
+      </ion-card-content>
+      <ion-card-title>99 Frete</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      Com o 99 Frete você encontra quem busque suas encomendas de forma rápida, barato e seguro!
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-item>
+      <form form #form="ngForm" (ngSubmit)="consultaFrete(form)">
+        <ion-label>Digite aqui o cep</ion-label>
+        <ion-input name="cep" type="number" ngModel></ion-input>
+        <ion-button expand="full" type="submit">Consultar</ion-button>
+      </form>
+    </ion-item>
+
+    <ion-card-content>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Resultados</ion-card-title>
+        </ion-card-header>
+        <ion-item>
+          <ion-label>Cep</ion-label>
+          <ion-label>{{frete.cep}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Valor</ion-label>
+          <ion-label>{{frete.valor}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mensagem</ion-label>
+          <ion-label>{{frete.mensagem}}</ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
